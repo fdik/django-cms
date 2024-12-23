@@ -92,6 +92,8 @@ cms.constants
 
 .. autodata:: VISIBILITY_ANONYMOUS
 
+.. autodata:: VISIBILITY_NONE
+
 .. autodata:: TEMPLATE_INHERITANCE_MAGIC
 
 .. autodata:: LEFT

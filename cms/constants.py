@@ -46,6 +46,11 @@ VISIBILITY_USERS = 1
 #: Limits menu visibility to anonymous(not authenticated) users.
 VISIBILITY_ANONYMOUS = 2
 
+#: Used for the ``limit_visibility_in_menu`` keyword argument to :func: `create_page`.
+#: Disables visibility
+VISIBILITY_NONE = 3
+
+
 X_FRAME_OPTIONS_INHERIT = 0
 X_FRAME_OPTIONS_DENY = 1
 X_FRAME_OPTIONS_SAMEORIGIN = 2

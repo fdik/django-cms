@@ -14,6 +14,7 @@ class PageContent(models.Model):
         (constants.VISIBILITY_ALL, _('no limit set')),
         (constants.VISIBILITY_USERS, _('for logged in users only')),
         (constants.VISIBILITY_ANONYMOUS, _('for anonymous users only')),
+        (constants.VISIBILITY_NONE, _('not visible')),
     )
     TEMPLATE_DEFAULT = constants.TEMPLATE_INHERITANCE_MAGIC if get_cms_setting(
         'TEMPLATE_INHERITANCE') else (get_cms_setting('TEMPLATES')[0][0] if get_cms_setting('TEMPLATES') else "")

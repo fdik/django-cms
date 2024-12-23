@@ -165,7 +165,7 @@ def create_page(title, template, language, menu_title=None, slug=None,
     :type site: :class:`django.contrib.sites.models.Site` instance
     :param bool login_required: Whether users must be logged in or not to view this page
     :param limit_visibility_in_menu: Limits visibility of this page in the menu
-    :type limit_visibility_in_menu: :data:`VISIBILITY_ALL` or :data:`VISIBILITY_USERS` or :data:`VISIBILITY_ANONYMOUS`
+    :type limit_visibility_in_menu: :data:`VISIBILITY_ALL` or :data:`VISIBILITY_USERS` or :data:`VISIBILITY_ANONYMOUS` or :data:`VISIBILITY_NONE`
     :param str position: Where to insert this node if *parent* is given, must be ``'first-child'`` or ``'last-child'``
     :param str   overwrite_url: Overwritten path for this page
     :param int xframe_options: X Frame Option value for Clickjacking protection
@@ -199,7 +199,7 @@ def create_page(title, template, language, menu_title=None, slug=None,
         assert navigation_extenders in menus
 
     # validate menu visibility
-    accepted_limitations = (constants.VISIBILITY_ALL, constants.VISIBILITY_USERS, constants.VISIBILITY_ANONYMOUS)
+    accepted_limitations = (constants.VISIBILITY_ALL, constants.VISIBILITY_USERS, constants.VISIBILITY_ANONYMOUS, constants.VISIBILITY_NONE)
     assert limit_visibility_in_menu in accepted_limitations
 
     # validate position
@@ -296,7 +296,7 @@ def create_page_content(language, title, page, menu_title=None, slug=None,
     assert language in get_language_list(page.site_id)
 
     # validate menu visibility
-    accepted_limitations = (constants.VISIBILITY_ALL, constants.VISIBILITY_USERS, constants.VISIBILITY_ANONYMOUS)
+    accepted_limitations = (constants.VISIBILITY_ALL, constants.VISIBILITY_USERS, constants.VISIBILITY_ANONYMOUS, constants.VISIBILITY_NONE)
     assert limit_visibility_in_menu in accepted_limitations
 
     # set default slug:
